@@ -94,7 +94,7 @@ h2.date-and-time {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -150px;
+  bottom: -180px;
 }
 
 .conversion-button {

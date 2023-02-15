@@ -23,12 +23,21 @@ function catchError(error) {
 function replaceAppValues(response) {
   let newTemperature = response.data.temperature.current;
   let newCityName = response.data.city;
-  let oldCityName = document.querySelector("#city-name");
-  let oldTemperature = document.querySelector("#current-degrees");
-  oldCityName.innerHTML = newCityName;
-  oldTemperature.innerHTML = `${Math.round(newTemperature)}°C`;
+
   let weatherIcon = document.querySelector("#weather-icon");
   weatherIcon.setAttribute("src", response.data.condition.icon_url);
+
+  let oldTemperature = document.querySelector("#current-degrees");
+  oldTemperature.innerHTML = `${Math.round(newTemperature)}°C`;
+
+  let oldCityName = document.querySelector("#city-name");
+  oldCityName.innerHTML = newCityName;
+
+  let dayAndTime = document.querySelector("#date-and-time");
+  dayAndTime.innerHTML = `${response.data.time} local time`;
+
+  let weatherStatus = document.querySelector("#weather-status");
+  weatherStatus.innerHTML = response.data.condition.description;
 }
 
 // ----> Current location

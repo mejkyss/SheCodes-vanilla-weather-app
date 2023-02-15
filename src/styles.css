@@ -66,3 +66,9 @@ h2.date-and-time {
   font-weight: 300;
   margin: 0px;
 }
+small.attribution {
+  display: block;
+  position: relative;
+  text-align: center;
+  top: -35px;
+}

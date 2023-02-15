@@ -13,6 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
@@ -37,7 +38,8 @@
             </button>
             <button
               class="btn btn-outline-secondary current-location-button"
-              id="current-location"
+              type="button"
+              id="current-location-button"
             >
               Use current location
             </button>
@@ -45,8 +47,8 @@
         </form>
         <div class="main-information-box">
           <img class="weather-icon" src="../img/icon.png" alt="" />
-          <strong class="current-degrees">15°C</strong>
-          <h1 class="city-name">Olbramkostel</h1>
+          <strong class="current-degrees" id="current-degrees">15°C</strong>
+          <h1 class="city-name" id="city-name">Olbramkostel</h1>
           <h2 class="date-and-time">Friday, 05.00 local time</h2>
           <p class="weather-status">Clear</p>
         </div>

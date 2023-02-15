@@ -1,0 +1,68 @@
+body {
+  font-family: "Signika", sans-serif;
+}
+.weather-app {
+  /* background-color: rgb(41, 69, 182); */
+  background-image: url(../img/test.png);
+  width: 600px;
+  height: 600px;
+  margin: 50px auto;
+  padding: 30px 50px;
+  border-radius: 15px;
+}
+
+.city-input-field {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.search-button {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  color: aliceblue;
+}
+
+.current-location-button {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  color: aliceblue;
+}
+
+.main-information-box {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.6);
+  border-width: 0.1px;
+}
+
+.weather-icon {
+  height: 70px;
+  margin: 5px 0px;
+}
+
+strong.current-degrees {
+  color: aliceblue;
+  font-size: 50px;
+}
+h1.city-name {
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  margin: 0px;
+}
+h2.date-and-time {
+  color: aliceblue;
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0px;
+}
+.weather-status {
+  color: aliceblue;
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0px;
+}

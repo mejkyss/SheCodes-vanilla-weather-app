@@ -87,6 +87,38 @@ h2.date-and-time {
   font-weight: 300;
   margin: 0px;
 }
+
+.conversion-buttons {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -150px;
+}
+
+.conversion-button {
+  display: block;
+  color: aliceblue;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 5px 15px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.6);
+  border-width: 0.1px;
+}
+
+.conversion-button:hover {
+  display: block;
+  color: aliceblue;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  padding: 5px 15px;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.6);
+  border-width: 0.1px;
+}
+
 small.attribution {
   display: block;
   position: relative;

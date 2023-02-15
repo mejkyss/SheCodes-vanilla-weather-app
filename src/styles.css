@@ -32,7 +32,7 @@ body {
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  padding: 25px;
+  padding: 0px 25px 25px 15px;
   margin-bottom: 20px;
   border-radius: 15px;
   border-style: solid;
@@ -68,6 +68,8 @@ body {
 strong.current-degrees {
   color: aliceblue;
   font-size: 50px;
+  position: relative;
+  top: 15px;
 }
 h1.city-name {
   font-weight: 400;

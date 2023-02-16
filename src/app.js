@@ -35,6 +35,17 @@ function replaceAppValues(response) {
 
   let weatherStatus = document.querySelector("#weather-status");
   weatherStatus.innerHTML = response.data.condition.description;
+
+  let feelsLike = document.querySelector("#current-feels-like");
+  feelsLike.innerHTML = `${Math.round(
+    response.data.temperature.feels_like
+  )} °C`;
+
+  let humidity = document.querySelector("#current-humidity-value");
+  humidity.innerHTML = `${response.data.temperature.humidity} %`;
+
+  let windSpeed = document.querySelector("#current-wind-speed-value");
+  windSpeed.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
 }
 
 // ----> Current location

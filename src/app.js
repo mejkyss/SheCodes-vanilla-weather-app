@@ -33,9 +33,6 @@ function replaceAppValues(response) {
   let oldCityName = document.querySelector("#city-name");
   oldCityName.innerHTML = newCityName;
 
-  let dayAndTime = document.querySelector("#date-and-time");
-  dayAndTime.innerHTML = `${response.data.time} local time`;
-
   let weatherStatus = document.querySelector("#weather-status");
   weatherStatus.innerHTML = response.data.condition.description;
 }

@@ -1,4 +1,6 @@
 let apiKey = "f3b08f2120e855cotb88e29725334a5b";
+let celsiusTemperature = 7;
+let celsiusFeelsLikeTemperature = 15;
 
 //Main functions
 
@@ -46,6 +48,9 @@ function replaceAppValues(response) {
 
   let windSpeed = document.querySelector("#current-wind-speed-value");
   windSpeed.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+
+  celsiusTemperature = response.data.temperature.current;
+  celsiusFeelsLikeTemperature = response.data.temperature.feels_like;
 }
 
 // ----> Current location
@@ -66,12 +71,30 @@ function getLocation(position) {
 
 // Converting between Farenheit & Celsius
 
-// let celsiusButton = document.querySelector("#celsius-button");
-// celsiustButton.addEventListener("click", displayCelsius);
+let celsiusButton = document.querySelector("#celsius-button");
+celsiusButton.addEventListener("click", displayCelsius);
 
-// function displayCelsius() {}
+function displayCelsius(event) {
+  event.preventDefault();
+  let celsiusTemperatureValue = document.querySelector("#current-degrees");
+  celsiusTemperatureValue.innerHTML = `${Math.round(celsiusTemperature)}°C`;
+  let celsiusFeelsLikeValue = document.querySelector("#current-feels-like");
+  celsiusFeelsLikeValue.innerHTML = `${Math.round(
+    celsiusFeelsLikeTemperature
+  )}°C`;
+}
 
-// let farenheitButton = document.querySelector("#farenheit-button");
-// farenheitButton.addEventListener("click", displayFarenheit);
+let farenheitButton = document.querySelector("#farenheit-button");
+farenheitButton.addEventListener("click", displayFarenheit);
 
-// function displayFarenheit() {}
+function displayFarenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemperatureValue = document.querySelector("#current-degrees");
+  fahrenheitTemperatureValue.innerHTML = `${Math.round(
+    (celsiusTemperature * 9) / 5 + 32
+  )}°F`;
+  let fahrenheitFeelsLikeValue = document.querySelector("#current-feels-like");
+  fahrenheitFeelsLikeValue.innerHTML = `${Math.round(
+    (celsiusFeelsLikeTemperature * 9) / 5 + 32
+  )}°F`;
+}

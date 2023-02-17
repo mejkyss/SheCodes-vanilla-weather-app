@@ -55,11 +55,11 @@
               type="button"
               id="current-location-button"
             >
-              Use current location
+              My location
             </button>
           </div>
         </form>
-        <div class="main-information-box">
+        <div class="main-information-box active-weather-day">
           <img
             class="weather-icon"
             id="weather-icon"
@@ -84,6 +84,91 @@
             <div class="col" id="current-wind-speed-value">50 km/h</div>
           </div>
         </div>
+
+        <div class="container text-center px-1">
+          <div class="row align-items-center gx-2">
+            <div class="col">
+              <div class="weather-forecast-box active-weather-day">
+                <div class="day0" id="day0">Today</div>
+                <img
+                  class="weather-forecast-icon"
+                  id="weather-forecast-icon"
+                  src="../img/broken-clouds-day.png"
+                  alt=""
+                />
+                <div class="high-low" id="high-low">
+                  <p class="forecast-high" id="forecast-high">17°C</p>
+                  <p class="forecast-low" id="forecast-low">10°C</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="weather-forecast-box">
+                <div class="day1" id="day1">Tue</div>
+                <img
+                  class="weather-forecast-icon"
+                  id="weather-forecast-icon"
+                  src="../img/broken-clouds-day.png"
+                  alt=""
+                />
+                <div class="high-low" id="high-low">
+                  <p class="forecast-high" id="forecast-high">13°C</p>
+                  <p class="forecast-low" id="forecast-low">10°C</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="weather-forecast-box">
+                <div class="day2" id="day2">Wed</div>
+                <img
+                  class="weather-forecast-icon"
+                  id="weather-forecast-icon"
+                  src="../img/broken-clouds-day.png"
+                  alt=""
+                />
+                <div class="high-low" id="high-low">
+                  <p class="forecast-high" id="forecast-high">15°C</p>
+                  <p class="forecast-low" id="forecast-low">5°C</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="weather-forecast-box">
+                <div class="day3" id="day3">Thu</div>
+                <img
+                  class="weather-forecast-icon"
+                  id="weather-forecast-icon"
+                  src="../img/broken-clouds-day.png"
+                  alt=""
+                />
+                <div class="high-low" id="high-low">
+                  <p class="forecast-high" id="forecast-high">17°C</p>
+                  <p class="forecast-low" id="forecast-low">7°C</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="weather-forecast-box">
+                <div class="day4" id="day4">Fri</div>
+                <img
+                  class="weather-forecast-icon"
+                  id="weather-forecast-icon"
+                  src="../img/broken-clouds-day.png"
+                  alt=""
+                />
+                <div class="high-low" id="high-low">
+                  <p class="forecast-high" id="forecast-high">13°C</p>
+                  <p class="forecast-low" id="forecast-low">6°C</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="temperature-formatting-control">
           <div
             class="btn-group conversion-buttons"

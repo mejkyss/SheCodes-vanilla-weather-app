@@ -10,6 +10,12 @@ body {
   border-radius: 15px;
 }
 
+.search-for-a-city {
+  /* Hack for matching forecast size */
+  margin-left: 10px;
+  width: 480px;
+}
+
 .city-input-field {
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
@@ -29,40 +35,21 @@ body {
 
 .main-information-box {
   display: inline-block;
-  background-color: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
   padding: 0px 25px 25px 15px;
   margin-bottom: 20px;
   border-radius: 15px;
   border-style: solid;
-  border-color: rgba(255, 255, 255, 0.6);
   border-width: 0.1px;
+
+  /* Hack for matching forecast size */
+  margin-left: 10px;
 
   /* Fix for backdrop-filter issue */
   -webkit-transform: translate3d(0, 0, 0);
 }
 
-.weather-description-box {
-  display: block;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  padding: 15px;
-  border-radius: 15px;
-  border-style: solid;
-  border-color: rgba(255, 255, 255, 0.6);
-  border-width: 0.1px;
-}
-.weather-characteristics {
-  font-weight: 500;
-  color: aliceblue;
-}
-
-.weather-values {
-  color: aliceblue;
-  font-weight: 300;
-}
-
-.weather-icon {
+.weather-icon,
+.weather-forecast-icon {
   height: 70px;
   margin: 5px 0px;
 }
@@ -87,11 +74,65 @@ h1.city-name {
   margin: 0px;
 }
 
+.weather-description-box {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 15px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.6);
+  border-width: 0.1px;
+
+  /* Hack for matching forecast size */
+  margin-left: 10px;
+  margin-right: 10px;
+  width: auto;
+}
+
+.weather-characteristics {
+  font-weight: 500;
+  color: aliceblue;
+}
+
+.weather-values {
+  color: aliceblue;
+  font-weight: 300;
+}
+
+.weather-forecast-box {
+  display: inline-block;
+  color: aliceblue;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 5px;
+  margin: 20px 5.5px;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.6);
+  border-width: 0.1px;
+}
+
+.active-weather-day {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.forecast-high,
+.forecast-low {
+  margin: 0px;
+}
+
+.forecast-high {
+  font-weight: bold;
+}
+
 .conversion-buttons {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -180px;
+  bottom: 0px;
 }
 
 .conversion-button {

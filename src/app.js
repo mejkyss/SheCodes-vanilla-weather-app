@@ -66,7 +66,7 @@ function getLocation(position) {
   let apiKey = "f3b08f2120e855cotb88e29725334a5b";
   let url = `https://api.shecodes.io/weather/v1/current?units=metric&key=${apiKey}&lon=${lon}&lat=${lat}`;
   axios.get(url).then(replaceAppValues);
-  prepareForecast();
+  prepareForecast(lat, lon);
 }
 
 // Converting between Farenheit & Celsius
@@ -101,11 +101,16 @@ function displayFarenheit(event) {
 
 // forecast section
 
-function prepareForecast() {
-  let searchField = document.querySelector("#search-field");
-  let newCityName = searchField.value;
-  let url = `https://api.shecodes.io/weather/v1/forecast?query=${newCityName}&key=${apiKey}&units=metric`;
-  axios.get(url).then((response) => displayForecast(response.data.daily));
+function prepareForecast(lat, lon) {
+  if (lat !== undefined) {
+    let url = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}`;
+    axios.get(url).then((response) => displayForecast(response.data.daily));
+  } else {
+    let searchField = document.querySelector("#search-field");
+    let newCityName = searchField.value;
+    let url = `https://api.shecodes.io/weather/v1/forecast?query=${newCityName}&key=${apiKey}&units=metric`;
+    axios.get(url).then((response) => displayForecast(response.data.daily));
+  }
 }
 
 function displayForecast(forecast) {
@@ -148,3 +153,54 @@ function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
 }
+
+//START OF FAKE CODE
+
+function prepareFakeForecast() {
+  let forecast = [
+    {
+      time: 1646102400,
+      temperature: { maximum: 15, minimum: 10 },
+      condition: {
+        icon_url:
+          "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
+      },
+    },
+    {
+      time: 1646188800,
+      temperature: { maximum: 18, minimum: 12 },
+      condition: {
+        icon_url:
+          "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png",
+      },
+    },
+    {
+      time: 1646275200,
+      temperature: { maximum: 20, minimum: 14 },
+      condition: {
+        icon_url:
+          "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png",
+      },
+    },
+    {
+      time: 1646361600,
+      temperature: { maximum: 22, minimum: 16 },
+      condition: {
+        icon_url:
+          "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
+      },
+    },
+    {
+      time: 1646448000,
+      temperature: { maximum: 24, minimum: 18 },
+      condition: {
+        icon_url:
+          "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png",
+      },
+    },
+  ];
+
+  displayForecast(forecast);
+}
+prepareFakeForecast();
+// END OF FAKE CODE

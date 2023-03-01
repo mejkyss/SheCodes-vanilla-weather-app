@@ -66,7 +66,7 @@
             src="../img/broken-clouds-day.png"
             alt=""
           />
-          <strong class="current-degrees" id="current-degrees">7°C</strong>
+          <strong class="current-degrees" id="current-degrees">7°</strong>
           <h1 class="city-name" id="city-name">Smurftown</h1>
 
           <p class="weather-status" id="weather-status">Clear</p>
@@ -79,94 +79,14 @@
             <div class="col">Wind speed</div>
           </div>
           <div class="row align-items-center weather-values">
-            <div class="col" id="current-feels-like">15°C</div>
+            <div class="col" id="current-feels-like">15°</div>
             <div class="col" id="current-humidity-value">80 %</div>
             <div class="col" id="current-wind-speed-value">50 km/h</div>
           </div>
         </div>
 
         <div class="container text-center px-1">
-          <div class="row align-items-center gx-2">
-            <div class="col">
-              <div class="weather-forecast-box">
-                <div class="day0" id="day0">Monday</div>
-                <img
-                  class="weather-forecast-icon"
-                  id="forecast-icon-today"
-                  src="../img/broken-clouds-day.png"
-                  alt=""
-                />
-                <div class="high-low" id="high-low">
-                  <p class="forecast-high" id="forecast-high">17°C</p>
-                  <p class="forecast-low" id="forecast-low">10°C</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="weather-forecast-box">
-                <div class="day1" id="day1">Tue</div>
-                <img
-                  class="weather-forecast-icon"
-                  id="weather-forecast-icon"
-                  src="../img/broken-clouds-day.png"
-                  alt=""
-                />
-                <div class="high-low" id="high-low">
-                  <p class="forecast-high" id="forecast-high">13°C</p>
-                  <p class="forecast-low" id="forecast-low">10°C</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="weather-forecast-box">
-                <div class="day2" id="day2">Wed</div>
-                <img
-                  class="weather-forecast-icon"
-                  id="weather-forecast-icon"
-                  src="../img/broken-clouds-day.png"
-                  alt=""
-                />
-                <div class="high-low" id="high-low">
-                  <p class="forecast-high" id="forecast-high">15°C</p>
-                  <p class="forecast-low" id="forecast-low">5°C</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="weather-forecast-box">
-                <div class="day3" id="day3">Thu</div>
-                <img
-                  class="weather-forecast-icon"
-                  id="weather-forecast-icon"
-                  src="../img/broken-clouds-day.png"
-                  alt=""
-                />
-                <div class="high-low" id="high-low">
-                  <p class="forecast-high" id="forecast-high">17°C</p>
-                  <p class="forecast-low" id="forecast-low">7°C</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="weather-forecast-box">
-                <div class="day4" id="day4">Fri</div>
-                <img
-                  class="weather-forecast-icon"
-                  id="weather-forecast-icon"
-                  src="../img/broken-clouds-day.png"
-                  alt=""
-                />
-                <div class="high-low" id="high-low">
-                  <p class="forecast-high" id="forecast-high">13°C</p>
-                  <p class="forecast-low" id="forecast-low">6°C</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="row align-items-center gx-2" id="forecast"></div>
         </div>
 
         <div class="temperature-formatting-control">
@@ -187,7 +107,7 @@
               class="btn btn-outline-primary conversion-button"
               id="farenheit-button"
             >
-              Farenheit
+              Fahrenheit
             </button>
           </div>
         </div>

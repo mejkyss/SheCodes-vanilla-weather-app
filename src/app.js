@@ -4,6 +4,34 @@ let celsiusFeelsLikeTemperature = 15;
 
 //Main functions
 
+function changeBackgroundImage(weatherCondition) {
+  let weatherApp = document.querySelector(".weather-app");
+
+  if (weatherCondition === "clear sky") {
+    weatherApp.style.backgroundImage = "url('../img/sunny_0.webp')";
+  } else if (
+    weatherCondition === "few clouds" ||
+    weatherCondition === "scattered clouds" ||
+    weatherCondition === "broken clouds" ||
+    weatherCondition === "overcast clouds"
+  ) {
+    weatherApp.style.backgroundImage = "url('../img/cloudy_0.png')";
+  } else if (
+    weatherCondition === "shower rain" ||
+    weatherCondition === "rain"
+  ) {
+    weatherApp.style.backgroundImage = "url('../img/rainy_0.png')";
+  } else if (weatherCondition === "snow") {
+    weatherApp.style.backgroundImage = "url('../img/snowy_0.webp')";
+  } else if (weatherCondition === "mist") {
+    weatherApp.style.backgroundImage = "url('../img/misty_0.png')";
+  } else if (weatherCondition === "thunderstorm") {
+    weatherApp.style.backgroundImage = "url('../img/thunder_storm_0.png')";
+  } else {
+    weatherApp.style.backgroundImage = "url('../img/test.png')";
+  }
+}
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchForCity);
 
@@ -38,6 +66,7 @@ function replaceAppValues(response) {
 
   let weatherStatus = document.querySelector("#weather-status");
   weatherStatus.innerHTML = response.data.condition.description;
+  changeBackgroundImage(response.data.condition.description);
 
   let feelsLike = document.querySelector("#current-feels-like");
   feelsLike.innerHTML = `${Math.round(response.data.temperature.feels_like)}°`;

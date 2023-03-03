@@ -144,7 +144,7 @@ function prepareForecast(lat, lon) {
 
 function displayForecast(forecast) {
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = "";
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
@@ -172,7 +172,6 @@ function displayForecast(forecast) {
     }
   });
 
-  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 

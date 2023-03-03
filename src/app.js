@@ -59,7 +59,7 @@ function replaceAppValues(response) {
   weatherIcon.setAttribute("src", response.data.condition.icon_url);
 
   let oldTemperature = document.querySelector("#current-degrees");
-  oldTemperature.innerHTML = `${Math.round(newTemperature)}°`;
+  oldTemperature.innerHTML = `${Math.round(newTemperature)}°C`;
 
   let oldCityName = document.querySelector("#city-name");
   oldCityName.innerHTML = newCityName;
@@ -69,7 +69,7 @@ function replaceAppValues(response) {
   changeBackgroundImage(response.data.condition.description);
 
   let feelsLike = document.querySelector("#current-feels-like");
-  feelsLike.innerHTML = `${Math.round(response.data.temperature.feels_like)}°`;
+  feelsLike.innerHTML = `${Math.round(response.data.temperature.feels_like)}°C`;
 
   let humidity = document.querySelector("#current-humidity-value");
   humidity.innerHTML = `${response.data.temperature.humidity} %`;

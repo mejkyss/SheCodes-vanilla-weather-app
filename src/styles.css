@@ -1,8 +1,9 @@
 body {
   font-family: "Signika", sans-serif;
+  background-color: #272828;
 }
 .weather-app {
-  background-image: url(../img/test.png);
+  background-image: url(../img/default.png);
   background-position: center;
   background-size: cover;
   width: 600px;
@@ -163,8 +164,16 @@ h1.city-name {
 }
 
 small.attribution {
+  color: rgb(255, 255, 255);
   display: block;
   position: relative;
   text-align: center;
   top: -35px;
+}
+
+.attribution-link:visited {
+  color: #df35ba;
+}
+.attribution-link {
+  color: rgb(0, 185, 185);
 }

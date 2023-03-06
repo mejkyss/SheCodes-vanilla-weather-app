@@ -35,7 +35,7 @@ function changeBackgroundImage(weatherCondition) {
   } else if (weatherCondition === "thunderstorm") {
     weatherApp.style.backgroundImage = "url('../img/thunder_storm_0.png')";
   } else {
-    weatherApp.style.backgroundImage = "url('../img/test.png')";
+    weatherApp.style.backgroundImage = "url('../img/default.png')";
   }
 }
 

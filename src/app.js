@@ -1,6 +1,13 @@
 let apiKey = "f3b08f2120e855cotb88e29725334a5b";
 let celsiusTemperature = 7;
 let celsiusFeelsLikeTemperature = 15;
+let forecastCelsius = [
+  { high: 25, low: 18 },
+  { high: 23, low: 16 },
+  { high: 22, low: 15 },
+  { high: 20, low: 14 },
+  { high: 18, low: 12 },
+];
 
 //Main functions
 
@@ -111,6 +118,19 @@ function displayCelsius(event) {
   celsiusFeelsLikeValue.innerHTML = `${Math.round(
     celsiusFeelsLikeTemperature
   )}°C`;
+
+  let forecastHighs = document.querySelectorAll("#forecast-high");
+  forecastHighs.forEach(function (temperatureHigh, index) {
+    if (index < 5) {
+      temperatureHigh.innerHTML = forecastCelsius[index].high;
+    }
+  });
+  let forecastLows = document.querySelectorAll("#forecast-low");
+  forecastLows.forEach(function (temperatureLow, index) {
+    if (index < 5) {
+      temperatureLow.innerHTML = forecastCelsius[index].low;
+    }
+  });
 }
 
 let farenheitButton = document.querySelector("#farenheit-button");
@@ -121,11 +141,31 @@ function displayFarenheit(event) {
   let fahrenheitTemperatureValue = document.querySelector("#current-degrees");
   fahrenheitTemperatureValue.innerHTML = `${Math.round(
     (celsiusTemperature * 9) / 5 + 32
-  )}°F`;
+  )}°`;
   let fahrenheitFeelsLikeValue = document.querySelector("#current-feels-like");
   fahrenheitFeelsLikeValue.innerHTML = `${Math.round(
     (celsiusFeelsLikeTemperature * 9) / 5 + 32
-  )}°F`;
+  )}°`;
+
+  // Updating forecasts values to farhenhet in the UI
+
+  let forecastHighs = document.querySelectorAll("#forecast-high");
+  forecastHighs.forEach(function (temperatureHigh, index) {
+    if (index < 5) {
+      temperatureHigh.innerHTML = `${Math.round(
+        (forecastCelsius[index].high * 9) / 5 + 32
+      )}°`;
+    }
+  });
+
+  let forecastLows = document.querySelectorAll("#forecast-low");
+  forecastLows.forEach(function (temperatureLow, index) {
+    if (index < 5) {
+      temperatureLow.innerHTML = `${Math.round(
+        (forecastCelsius[index].low * 9) / 5 + 32
+      )}°`;
+    }
+  });
 }
 
 // forecast section
@@ -146,11 +186,18 @@ function displayForecast(forecast) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
 
+  forecastCelsius = forecast.map(function (day) {
+    return {
+      high: Math.round(day.temperature.maximum),
+      low: Math.round(day.temperature.minimum),
+    };
+  });
+
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="col">
+        `<div class="col"       >
           <div class="weather-forecast-box">
             <div class="day0" id="day0">${formatDay(forecastDay.time)}</div>
             <img

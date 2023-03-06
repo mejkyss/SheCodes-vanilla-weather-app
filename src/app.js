@@ -122,13 +122,13 @@ function displayCelsius(event) {
   let forecastHighs = document.querySelectorAll("#forecast-high");
   forecastHighs.forEach(function (temperatureHigh, index) {
     if (index < 5) {
-      temperatureHigh.innerHTML = forecastCelsius[index].high;
+      temperatureHigh.innerHTML = `${forecastCelsius[index].high}°`;
     }
   });
   let forecastLows = document.querySelectorAll("#forecast-low");
   forecastLows.forEach(function (temperatureLow, index) {
     if (index < 5) {
-      temperatureLow.innerHTML = forecastCelsius[index].low;
+      temperatureLow.innerHTML = `${forecastCelsius[index].low}°`;
     }
   });
 }

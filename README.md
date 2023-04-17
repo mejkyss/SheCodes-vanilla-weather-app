@@ -1,4 +1,4 @@
-<img align="right" width="571" alt="Screenshot 2023-04-10 at 16 57 44" src="https://user-images.githubusercontent.com/124203408/230927279-24bd7052-809d-44a7-b340-0f93c5e77c9d.png">
+<img align="right" width="518" alt="Screenshot_2023-04-10_at_16 56 37-removebg-preview" src="https://user-images.githubusercontent.com/124203408/232459610-24204085-46a6-48b6-9ed0-a16d5784a1a5.png">
 
 
 # vanilla-weather-app
